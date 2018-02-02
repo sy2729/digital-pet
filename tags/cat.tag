@@ -1,6 +1,14 @@
 
 <cat-behaviour>
-
+  <div class="sounds">
+    <audio src="sound/pat.wav" ref="pat" autostart="false" ></audio>
+    <audio src="sound/feed.wav" ref="feed" autostart="false" ></audio>
+    <audio src="sound/beat.wav" ref="beat" autostart="false" ></audio>
+    <audio src="sound/touch.wav" ref="touch" autostart="false" ></audio>
+    <audio src="sound/kick.wav" ref="kick" autostart="false" ></audio>
+    <audio src="sound/shower.wav" ref="shower" autostart="false" ></audio>
+    <audio src="sound/eat.wav" ref="eat" autostart="false" ></audio>
+  </div>
   <div class="row">
     <div class="small-2 colums">
       <div class="row">
@@ -19,7 +27,7 @@
       </div>
     </div>
 
-    <div class="small-6 colums" style="background: #ddd;">
+    <div class="small-6 colums">
 
         <svg width="663px" height="696px" viewBox="0 0 663 696" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="cat">
             <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
@@ -74,6 +82,7 @@
     var that = this;
 
     this.pat = function(){
+      this.refs.pat.play();
       this.happiness += Math.floor(Math.random()*5);
       this.loveness += Math.floor(Math.random()*2);
       this.rage -= Math.floor(Math.random()*5);
@@ -81,12 +90,14 @@
     };
 
     this.touch = function(){
+      this.refs.touch.play();
       this.happiness += Math.floor(Math.random()*3);
       this.loveness += Math.floor(Math.random()*2);
       this.rage -= Math.floor(Math.random()*3);
       this.check();
     };
     this.feed = function(){
+      this.refs.feed.play();
       this.happiness += Math.floor(Math.random()*10);
       this.loveness += Math.floor(Math.random()*6);
       this.health += Math.floor(Math.random()*3);
@@ -94,6 +105,7 @@
       this.check();
     };
     this.beat = function(){
+      this.refs.beat.play();
       this.happiness -= Math.floor(Math.random()*6);
       this.loveness -= Math.floor(Math.random()*4);
       this.health -= Math.floor(Math.random()*2);
@@ -101,6 +113,7 @@
       this.check();
     };
     this.kick = function(){
+        this.refs.kick.play();
         this.happiness -= Math.floor(Math.random()*10);
         this.loveness -= Math.floor(Math.random()*10);
         this.health -= Math.floor(Math.random()*5);
@@ -108,6 +121,7 @@
         this.check();
     };
     this.play = function(){
+      this.refs.pat.play();
       this.happiness += Math.floor(Math.random()*10);
       this.loveness += Math.floor(Math.random()*6);
       this.health += Math.floor(Math.random()*5);
@@ -115,6 +129,7 @@
       this.check();
     };
     this.shower = function(){
+        this.refs.shower.play();
         this.happiness += Math.floor(Math.random()*5);
         this.loveness += Math.floor(Math.random()*4);
         this.health += Math.floor(Math.random()*7);
@@ -122,6 +137,7 @@
       this.check();
     };
     this.eat = function(){
+      this.refs.eat.play();
       this.health = 0;
     };
 
@@ -168,7 +184,6 @@
       };
 
     };
-
 
 
 
